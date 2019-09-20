@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="javaMapperPackage" value="com.ys.pay.mapper" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/pay/src/main/java" />
+        <option name="javaModelPackage" value="com.ys.pay.domain.entity" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/pay/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="pay" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="pay">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.ys.pay.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/pay/src/main/java" />
+                  <option name="javaModelPacakge" value="com.ys.pay.domain.entity" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/pay/src/main/java" />
+                  <option name="xmlPackage" value="mappers" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/pay/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="parking_pay_app:car">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="p_id" />
+                  <option name="javaModelName" value="Car" />
+                  <option name="moduleName" value="pay" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="xmlMapperPackage" value="mappers" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/pay/src/main/resources" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>
