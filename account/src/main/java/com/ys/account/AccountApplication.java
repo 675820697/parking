@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.ys.account.mapper")
 public class AccountApplication {
 
+
     public static void main(String[] args) {
         SpringApplication.run(AccountApplication.class, args);
     }

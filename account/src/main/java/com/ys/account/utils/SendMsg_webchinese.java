@@ -16,8 +16,8 @@ public class SendMsg_webchinese {
 
         HttpClient client = new HttpClient();
         PostMethod post = new PostMethod("http://utf8.api.smschinese.cn");
-        post.addRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=gbk");//在头文件中设置转码
-        NameValuePair[] data ={ new NameValuePair("Uid", "本站用户名"),new NameValuePair("Key", "接口安全秘钥"),new NameValuePair("smsMob","手机号码"),new NameValuePair("smsText","验证码：8888")};
+        post.addRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=utf8");//在头文件中设置转码
+        NameValuePair[] data ={ new NameValuePair("Uid", "qq675820697"),new NameValuePair("Key", ""),new NameValuePair("smsMob","手机号码"),new NameValuePair("smsText","验证码：8888")};
         post.setRequestBody(data);
 
         client.executeMethod(post);
