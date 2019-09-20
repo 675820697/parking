@@ -27,9 +27,9 @@
   </delete>
   <insert id="insert" keyColumn="uid" keyProperty="uid" parameterType="com.ys.account.entity.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into user (username, `password`, `status`, 
+    insert into user (username, `password`,
       phone)
-    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{phone,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="uid" keyProperty="uid" parameterType="com.ys.account.entity.User" useGeneratedKeys="true">
@@ -81,7 +81,7 @@
         phone = #{phone,jdbcType=VARCHAR},
       </if>
     </set>
-    where `uid` = #{uid,jdbcType=INTEGER}
+    where `phone` = #{phone,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ys.account.entity.User">
     <!--@mbg.generated-->
@@ -92,4 +92,12 @@
       phone = #{phone,jdbcType=VARCHAR}
     where `uid` = #{uid,jdbcType=INTEGER}
   </update>
+  <select id="findUserByPhone" resultType="java.lang.String">
+    select parking_pay_app.user.phone from parking_pay_app.user where phone= #{phone}
+  </select>
+  <select id="selectByPhone" resultMap="BaseResultMap">
+    select username,password,phone
+    from parking_pay_app.user  where status=0 and phone = #{phone}
+
+  </select>
 </mapper>

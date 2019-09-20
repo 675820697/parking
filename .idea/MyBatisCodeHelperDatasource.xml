@@ -26,6 +26,16 @@
         </option>
         <option name="tableGenerateConfigs">
           <map>
+            <entry key="parking_pay_app:phone_code">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="cid" />
+                  <option name="javaModelName" value="PhoneCode" />
+                  <option name="moduleName" value="account" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="parking_pay_app:user">
               <value>
                 <TableGenerateConfig>

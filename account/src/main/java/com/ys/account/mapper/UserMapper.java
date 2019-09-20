@@ -1,6 +1,7 @@
 package com.ys.account.mapper;
 
 import com.ys.account.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer uid);
@@ -14,6 +15,10 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    String findUserByPhone (@Param("phone") String phone);
+
+    User selectByPhone(String phone);
 
 
 }
