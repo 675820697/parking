@@ -3,6 +3,7 @@ package com.ys.account.utils;
 /**
  * @author liuya
  */
+
 public class Constants {
     public static final String SUCCESS_MSG = "success";
     public static final String ERROR_MSG = "error";
