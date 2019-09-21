@@ -10,97 +10,14 @@
     <result column="p_out_time" jdbcType="TIMESTAMP" property="pOutTime" />
     <result column="uid" jdbcType="INTEGER" property="uid" />
   </resultMap>
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    p_id, p_number, p_into_time, p_status, p_out_time, `uid`
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    <!--@mbg.generated-->
-    select 
-    <include refid="Base_Column_List" />
-    from car
-    where p_id = #{pId,jdbcType=INTEGER}
+  <insert id="insert" useGeneratedKeys="true" keyProperty="pId">
+    insert  into  car(p_number, uid) values (#{car.PNumber},#{car.uid})
+  </insert>
+  <update id="update">
+    update car set p_status=1,p_out_time=#{outTime}   where uid=#{uid}
+  </update>
+
+  <select id="select" resultMap="BaseResultMap">
+    select c.p_into_time,c.p_out_time from car c where c.uid=#{uid}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!--@mbg.generated-->
-    delete from car
-    where p_id = #{pId,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" keyColumn="p_id" keyProperty="pId" parameterType="com.ys.pay.domain.entity.Car" useGeneratedKeys="true">
-    <!--@mbg.generated-->
-    insert into car (p_number, p_into_time, p_status, 
-      p_out_time, `uid`)
-    values (#{pNumber,jdbcType=VARCHAR}, #{pIntoTime,jdbcType=TIMESTAMP}, #{pStatus,jdbcType=TINYINT}, 
-      #{pOutTime,jdbcType=TIMESTAMP}, #{uid,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" keyColumn="p_id" keyProperty="pId" parameterType="com.ys.pay.domain.entity.Car" useGeneratedKeys="true">
-    <!--@mbg.generated-->
-    insert into car
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="pNumber != null">
-        p_number,
-      </if>
-      <if test="pIntoTime != null">
-        p_into_time,
-      </if>
-      <if test="pStatus != null">
-        p_status,
-      </if>
-      <if test="pOutTime != null">
-        p_out_time,
-      </if>
-      <if test="uid != null">
-        `uid`,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="pNumber != null">
-        #{pNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="pIntoTime != null">
-        #{pIntoTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pStatus != null">
-        #{pStatus,jdbcType=TINYINT},
-      </if>
-      <if test="pOutTime != null">
-        #{pOutTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="uid != null">
-        #{uid,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ys.pay.domain.entity.Car">
-    <!--@mbg.generated-->
-    update car
-    <set>
-      <if test="pNumber != null">
-        p_number = #{pNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="pIntoTime != null">
-        p_into_time = #{pIntoTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pStatus != null">
-        p_status = #{pStatus,jdbcType=TINYINT},
-      </if>
-      <if test="pOutTime != null">
-        p_out_time = #{pOutTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="uid != null">
-        `uid` = #{uid,jdbcType=INTEGER},
-      </if>
-    </set>
-    where p_id = #{pId,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.ys.pay.domain.entity.Car">
-    <!--@mbg.generated-->
-    update car
-    set p_number = #{pNumber,jdbcType=VARCHAR},
-      p_into_time = #{pIntoTime,jdbcType=TIMESTAMP},
-      p_status = #{pStatus,jdbcType=TINYINT},
-      p_out_time = #{pOutTime,jdbcType=TIMESTAMP},
-      `uid` = #{uid,jdbcType=INTEGER}
-    where p_id = #{pId,jdbcType=INTEGER}
-  </update>
 </mapper>
