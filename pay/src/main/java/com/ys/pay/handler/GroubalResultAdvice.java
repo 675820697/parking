@@ -1,5 +1,6 @@
 package com.ys.pay.handler;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * @author ljx
  */
 @RestControllerAdvice
+@Slf4j
 public class GroubalResultAdvice implements ResponseBodyAdvice<Object> {
 
     @Override
@@ -20,6 +22,8 @@ public class GroubalResultAdvice implements ResponseBodyAdvice<Object> {
 
     @Override
     public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType, Class aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
+
+
         return null;
     }
 }

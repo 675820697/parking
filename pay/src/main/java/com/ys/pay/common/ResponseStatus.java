@@ -3,7 +3,6 @@ package com.ys.pay.common;
 /**
  * @author 响应信息
  */
-
 public enum ResponseStatus {
     /*
         成功状态码200

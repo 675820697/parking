@@ -27,5 +27,5 @@ public interface CarService {
      * @param uid
      * @return
      */
-    Car allTime(int uid);
+    String allTime(int uid);
 }
